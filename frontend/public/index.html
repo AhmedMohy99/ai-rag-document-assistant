@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI RAG Document Assistant | Ahmed Mohy</title>
+  <meta name="description" content="Upload documents, ingest URLs, and ask questions with a real RAG assistant." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">AI RAG Document Assistant</div>
+      <a class="small-link" href="https://github.com/AhmedMohy99" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="hero">
+      <p class="eyebrow">Project 1 • Real Deployable AI App</p>
+      <h1>Ask questions over PDFs, DOCX, TXT files, and URLs.</h1>
+      <p class="subtext">
+        This frontend is designed for Vercel. The backend API handles ingestion, embeddings, retrieval, and answers.
+      </p>
+      <div class="status-row">
+        <span class="badge">FastAPI</span>
+        <span class="badge">OpenAI</span>
+        <span class="badge">RAG</span>
+        <span class="badge">Vercel + Render</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>1) Upload Files</h2>
+        <p class="muted">Supported: PDF, DOCX, TXT</p>
+        <input id="filesInput" type="file" multiple />
+        <button id="uploadBtn">Upload & Index</button>
+        <div id="uploadResult" class="result"></div>
+      </div>
+
+      <div class="card">
+        <h2>2) Ingest URL</h2>
+        <p class="muted">Paste a webpage URL to index its content.</p>
+        <input id="urlInput" type="url" placeholder="https://example.com/article" />
+        <button id="urlBtn">Index URL</button>
+        <div id="urlResult" class="result"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>3) Ask a Question</h2>
+      <textarea id="questionInput" rows="5" placeholder="Ask a question about the documents..."></textarea>
+      <div class="action-row">
+        <button id="askBtn">Ask</button>
+        <button id="healthBtn" class="secondary">Check Health</button>
+      </div>
+      <div id="answerBox" class="answer-box hidden">
+        <h3>Answer</h3>
+        <p id="answerText"></p>
+        <h3>Sources</h3>
+        <div id="sourcesList" class="sources-list"></div>
+      </div>
+      <div id="healthBox" class="result"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
